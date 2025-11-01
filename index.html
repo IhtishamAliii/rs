@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Application Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Additional styles if needed */
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 py-8 px-4">
+    <div class="max-w-4xl mx-auto">
+        <!-- Header -->
+        <div class="bg-white rounded-t-2xl shadow-lg p-6 mb-0">
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">Driver Application Form</h1>
+            <p class="text-gray-600">Complete all sections to be considered for the position</p>
+        </div>
+
+        <!-- Progress Steps -->
+        <div class="bg-white px-6 py-4 mb-0 shadow-lg">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <div id="step-1" class="w-10 h-10 rounded-full flex items-center justify-center font-bold bg-gray-200 text-gray-500">1</div>
+                    <div class="h-1 w-12 md:w-20 mx-2 bg-gray-200"></div>
+                </div>
+                <div class="flex items-center">
+                    <div id="step-2" class="w-10 h-10 rounded-full flex items-center justify-center font-bold bg-gray-200 text-gray-500">2</div>
+                    <div class="h-1 w-12 md:w-20 mx-2 bg-gray-200"></div>
+                </div>
+                <div class="flex items-center">
+                    <div id="step-3" class="w-10 h-10 rounded-full flex items-center justify-center font-bold bg-gray-200 text-gray-500">3</div>
+                    <div class="h-1 w-12 md:w-20 mx-2 bg-gray-200"></div>
+                </div>
+                <div class="flex items-center">
+                    <div id="step-4" class="w-10 h-10 rounded-full flex items-center justify-center font-bold bg-gray-200 text-gray-500">4</div>
+                    <div class="h-1 w-12 md:w-20 mx-2 bg-gray-200"></div>
+                </div>
+                <div class="flex items-center">
+                    <div id="step-5" class="w-10 h-10 rounded-full flex items-center justify-center font-bold bg-gray-200 text-gray-500">5</div>
+                </div>
+            </div>
+            <div class="flex justify-between mt-2 text-xs text-gray-600">
+                <span>Personal</span>
+                <span>Experience</span>
+                <span>License</span>
+                <span>English</span>
+                <span>Documents</span>
+            </div>
+        </div>
+
+        <!-- Form Content -->
+        <form id="application-form" class="bg-white rounded-b-2xl shadow-lg p-8">
+            <!-- Step 1: Personal Information -->
+            <div id="step1" class="space-y-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                    <i data-lucide="user" class="mr-3 text-purple-600" style="width: 28px; height: 28px;"></i>
+                    Personal Information
+                </h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Full Name *</label>
+                        <input type="text" name="fullName" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="John Doe">
+                        <p class="error text-red-500 text-sm mt-1 hidden"></p>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Email Address *</label>
+                        <input type="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="john@example.com">
+                        <p class="error text-red-500 text-sm mt-1 hidden"></p>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Phone Number *</label>
+                        <input type="tel" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="+971 50 123 4567">
+                        <p class="error text-red-500 text-sm mt-1 hidden"></p>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Date of Birth *</label>
+                        <input type="date" name="dateOfBirth" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                        <p class="error text-red-500 text-sm mt-1 hidden"></p>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Nationality</label>
+                        <input type="text" name="nationality" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="United Arab Emirates">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Current Address</label>
+                        <input type="text" name="address" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="Dubai, UAE">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2: Experience -->
+            <div id="step2" class="space-y-6 hidden">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                    <i data-lucide="file-text" class="mr-3 text-purple-600" style="width: 28px; height: 28px;"></i>
+                    Driving Experience
+                </h2>
+                <div>
+                    <label class="block text-gray-700 font-semibold mb-2">Years of Driving Experience *</label>
+                    <select name="yearsExperience" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                        <option value="">Select...</option>
+                        <option value="0-1">Less than 1 year</option>
+                        <option value="1-2">1-2 years</option>
+                        <option value="2-5">2-5 years</option>
+                        <option value="5-10">5-10 years</option>
+                        <option value="10+">10+ years</option>
+                    </select>
+                    <p class="error text-red-500 text-sm mt-1 hidden"></p>
+                </div>
+                <div>
+                    <label class="block text-gray-700 font-semibold mb-2">Vehicle Types You Can Drive *</label>
+                    <div class="grid md:grid-cols-3 gap-3">
+                        <label class="flex items-center space-x-2 cursor-pointer">
+                            <input type="checkbox" name="vehicleTypes" value="Sedan/Car" class="w-5 h-5 text-purple-600 rounded focus:ring-purple-500">
+                            <span class="text-gray-700">Sedan/Car</span>
+                        </label>
+                        <label class="flex items-center space-x-2 cursor-pointer">
+                            <input type="checkbox" name="vehicleTypes" value="SUV" class="w-5 h-5 text-purple-600 rounded focus:ring-purple-500">
+                            <span class="text-gray-700">SUV</span>
+                        </label>
+                        <label class="flex items-center space-x-2 cursor-pointer">
+                            <input type="checkbox" name="vehicleTypes" value="Van" class="w-5 h-5 text-purple-600 rounded focus:ring-purple-500">
+                            <span class="text-gray-700">Van</span>
+                        </label>
+                        <label class="flex items-center space-x-2 cursor-pointer">
+                            <input type="checkbox" name="vehicleTypes" value="Truck" class="w-5 h-5 text-purple-600 rounded focus:ring-purple-500">
+                            <span class="text-gray-700">Truck</span>
+                        </label>
+                        <label class="flex items-center space-x-2 cursor-pointer">
+                            <input type="checkbox" name="vehicleTypes" value="Bus" class="w-5 h-5 text-purple-600 rounded focus:ring-purple-500">
+                            <span class="text-gray-700">Bus</span>
+                        </label>
+                        <label class="flex items-center space-x-2 cursor-pointer">
+                            <input type="checkbox" name="vehicleTypes" value="Motorcycle" class="w-5 h-5 text-purple-600 rounded focus:ring-purple-500">
+                            <span class="text-gray-700">Motorcycle</span>
+                        </label>
+                    </div>
+                    <p class="error text-red-500 text-sm mt-1 hidden"></p>
+                </div>
+                <div>
+                    <label class="block text-gray-700 font-semibold mb-2">Previous/Current Employer</label>
+                    <input type="text" name="previousEmployer" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="Company name">
+                </div>
+            </div>
+
+            <!-- Step 3: License Information -->
+            <div id="step3" class="space-y-6 hidden">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                    <i data-lucide="calendar" class="mr-3 text-purple-600" style="width: 28px; height: 28px;"></i>
+                    Driving License Details
+                </h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">License Number *</label>
+                        <input type="text" name="licenseNumber" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="Enter license number">
+                        <p class="error text-red-500 text-sm mt-1 hidden"></p>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">License Type</label>
+                        <select name="licenseType" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                            <option value="">Select...</option>
+                            <option value="light">Light Vehicle</option>
+                            <option value="heavy">Heavy Vehicle</option>
+                            <option value="motorcycle">Motorcycle</option>
+                            <option value="bus">Bus/Public Transport</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Issue Date</label>
+                        <input type="date" name="licenseIssueDate" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Expiry Date *</label>
+                        <input type="date" name="licenseExpiryDate" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                        <p class="error text-red-500 text-sm mt-1 hidden"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 4: English Assessment -->
+            <div id="step4" class="space-y-6 hidden">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">English Language Assessment</h2>
+                <div>
+                    <label class="block text-gray-700 font-semibold mb-2">Rate Your English Level (1-10)</label>
+                    <input type="range" name="englishSelfRating" min="1" max="10" value="5" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                    <div class="flex justify-between text-sm text-gray-600 mt-2">
+                        <span>Beginner</span>
+                        <span id="english-rating" class="font-bold text-purple-600 text-lg">5</span>
+                        <span>Fluent</span>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-gray-700 font-semibold mb-2">Writing Sample (Tell us about your driving experience)</label>
+                    <textarea name="englishWritingSample" rows="6" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="Write a few sentences about your driving experience, why you want this job, and what makes you a good driver..."></textarea>
+                    <p class="text-sm text-gray-500 mt-1">This helps us assess your written English skills</p>
+                </div>
+            </div>
+
+            <!-- Step 5: Document Upload -->
+            <div id="step5" class="space-y-6 hidden">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                    <i data-lucide="upload" class="mr-3 text-purple-600" style="width: 28px; height: 28px;"></i>
+                    Upload Documents
+                </h2>
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+                    <div class="flex items-start">
+                        <i data-lucide="alert-circle" class="text-blue-600 mr-3 flex-shrink-0 mt-1" style="width: 20px; height: 20px;"></i>
+                        <div class="text-sm text-gray-700">
+                            <p class="font-semibold mb-1">Document Requirements:</p>
+                            <ul class="list-disc list-inside space-y-1">
+                                <li>Clear, readable scans or photos</li>
+                                <li>File size: Max 5MB per file</li>
+                                <li>Formats: PDF, JPG, PNG</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-purple-500 transition-colors">
+                        <i data-lucide="upload" class="mx-auto text-gray-400 mb-3" style="width: 40px; height: 40px;"></i>
+                        <label class="cursor-pointer">
+                            <span class="text-purple-600 font-semibold">Upload Driving License *</span>
+                            <input type="file" name="licenseFile" accept=".pdf,.jpg,.jpeg,.png" class="hidden">
+                        </label>
+                        <p id="license-file-name" class="text-sm text-green-600 mt-2 hidden"></p>
+                    </div>
+                    <div class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-purple-500 transition-colors">
+                        <i data-lucide="upload" class="mx-auto text-gray-400 mb-3" style="width: 40px; height: 40px;"></i>
+                        <label class="cursor-pointer">
+                            <span class="text-purple-600 font-semibold">Upload Emirates ID/Passport *</span>
+                            <input type="file" name="idFile" accept=".pdf,.jpg,.jpeg,.png" class="hidden">
+                        </label>
+                        <p id="id-file-name" class="text-sm text-green-600 mt-2 hidden"></p>
+                    </div>
+                    <div class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-purple-500 transition-colors">
+                        <i data-lucide="upload" class="mx-auto text-gray-400 mb-3" style="width: 40px; height: 40px;"></i>
+                        <label class="cursor-pointer">
+                            <span class="text-purple-600 font-semibold">Upload Resume/CV (Optional)</span>
+                            <input type="file" name="resumeFile" accept=".pdf,.doc,.docx" class="hidden">
+                        </label>
+                        <p id="resume-file-name" class="text-sm text-green-600 mt-2 hidden"></p>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6 mt-8">
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Availability to Start</label>
+                        <select name="availability" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                            <option value="">Select...</option>
+                            <option value="immediate">Immediate</option>
+                            <option value="1week">Within 1 week</option>
+                            <option value="2weeks">Within 2 weeks</option>
+                            <option value="1month">Within 1 month</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Expected Salary (AED/month)</label>
+                        <input type="number" name="expectedSalary" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="3000">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="flex justify-between mt-8 pt-6 border-t">
+                <button id="prev-btn" type="button" class="px-6 py-3 bg-gray-200 text-gray-700 rounded-lg font-semibold hover:bg-gray-300 transition-colors hidden">Previous</button>
+                <button id="next-btn" type="button" class="ml-auto px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-700 transition-colors">Next Step</button>
+                <button id="submit-btn" type="submit" class="ml-auto px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-semibold hover:from-purple-700 hover:to-blue-700 transition-all shadow-lg hidden">Submit Application</button>
+            </div>
+        </form>
+
+        <!-- Submitted Screen -->
+        <div id="submitted" class="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center p-4 hidden">
+            <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full text-center">
+                <div class="bg-green-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                    <i data-lucide="check-circle" class="text-green-600" style="width: 48px; height: 48px;"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Application Submitted!</h2>
+                <p class="text-gray-600 mb-6">Thank you for applying! We will review your application and contact you within 48 hours if your profile matches our requirements.</p>
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 text-sm text-gray-700">
+                    <p class="font-semibold mb-2">What happens next?</p>
+                    <ul class="text-left space-y-2">
+                        <li>• AI screening of your application</li>
+                        <li>• Document verification</li>
+                        <li>• Email notification of results</li>
+                        <li>• Interview invitation (if qualified)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        let step = 1;
+        const maxSteps = 5;
+        const form = document.getElementById('application-form');
+        const submitted = document.getElementById('submitted');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const submitBtn = document.getElementById('submit-btn');
+
+        const formData = {
+            fullName: '',
+            email: '',
+            phone: '',
+            address: '',
+            nationality: '',
+            dateOfBirth: '',
+            yearsExperience: '',
+            previousEmployer: '',
+            vehicleTypes: [],
+            licenseNumber: '',
+            licenseType: '',
+            licenseIssueDate: '',
+            licenseExpiryDate: '',
+            englishSelfRating: 5,
+            englishWritingSample: '',
+            licenseFile: null,
+            idFile: null,
+            resumeFile: null,
+            availability: '',
+            expectedSalary: ''
+        };
+
+        // Update progress
+        function updateProgress() {
+            for (let i = 1; i <= maxSteps; i++) {
+                const stepEl = document.getElementById(`step-${i}`);
+                const line = stepEl.previousElementSibling; // The line before it, if exists
+                if (i <= step) {
+                    stepEl.classList.remove('bg-gray-200', 'text-gray-500');
+                    stepEl.classList.add('bg-purple-600', 'text-white');
+                } else {
+                    stepEl.classList.add('bg-gray-200', 'text-gray-500');
+                    stepEl.classList.remove('bg-purple-600', 'text-white');
+                }
+                if (line && i <= step) {
+                    line.classList.remove('bg-gray-200');
+                    line.classList.add('bg-purple-600');
+                } else if (line) {
+                    line.classList.add('bg-gray-200');
+                    line.classList.remove('bg-purple-600');
+                }
+            }
+
+            document.querySelectorAll('[id^="step"]').forEach(s => s.classList.add('hidden'));
+            document.getElementById(`step${step}`).classList.remove('hidden');
+
+            prevBtn.classList.toggle('hidden', step === 1);
+            nextBtn.classList.toggle('hidden', step === maxSteps);
+            submitBtn.classList.toggle('hidden', step !== maxSteps);
+        }
+
+        // Validate current step
+        function validateStep(currentStep) {
+            let valid = true;
+            const errors = {};
+
+            if (currentStep === 1) {
+                if (!formData.fullName) {
+                    errors.fullName = 'Full name is required';
+                    valid = false;
+                }
+                if (!formData.email) {
+                    errors.email = 'Email is required';
+                    valid = false;
+                }
+                if (!formData.phone) {
+                    errors.phone = 'Phone is required';
+                    valid = false;
+                }
+                if (!formData.dateOfBirth) {
+                    errors.dateOfBirth = 'Date of birth is required';
+                    valid = false;
+                }
+            } else if (currentStep === 2) {
+                if (!formData.yearsExperience) {
+                    errors.yearsExperience = 'Experience is required';
+                    valid = false;
+                }
+                if (formData.vehicleTypes.length === 0) {
+                    errors.vehicleTypes = 'Select at least one vehicle type';
+                    valid = false;
+                }
+            } else if (currentStep === 3) {
+                if (!formData.licenseNumber) {
+                    errors.licenseNumber = 'License number is required';
+                    valid = false;
+                }
+                if (!formData.licenseExpiryDate) {
+                    errors.licenseExpiryDate = 'Expiry date is required';
+                    valid = false;
+                }
+            }
+
+            // Show errors
+            document.querySelectorAll('.error').forEach(el => el.classList.add('hidden'));
+            Object.keys(errors).forEach(key => {
+                const input = form.querySelector(`[name="${key}"]`);
+                if (input) {
+                    const errorEl = input.nextElementSibling;
+                    if (errorEl && errorEl.classList.contains('error')) {
+                        errorEl.textContent = errors[key];
+                        errorEl.classList.remove('hidden');
+                    }
+                } else if (key === 'vehicleTypes') {
+                    const container = form.querySelector('[name="vehicleTypes"]').parentElement.parentElement;
+                    const errorEl = container.querySelector('.error');
+                    errorEl.textContent = errors[key];
+                    errorEl.classList.remove('hidden');
+                }
+            });
+
+            return valid;
+        }
+
+        // Handle input changes
+        form.addEventListener('input', (e) => {
+            const { name, value, type, checked, files } = e.target;
+            if (type === 'checkbox') {
+                if (checked) {
+                    formData[name].push(value);
+                } else {
+                    formData[name] = formData[name].filter(v => v !== value);
+                }
+            } else if (type === 'file') {
+                formData[name] = files[0];
+                const fileNameEl = document.getElementById(`${name.split('File')[0]}-file-name`);
+                if (files[0]) {
+                    fileNameEl.textContent = `✓ ${files[0].name}`;
+                    fileNameEl.classList.remove('hidden');
+                } else {
+                    fileNameEl.classList.add('hidden');
+                }
+            } else if (type === 'range') {
+                formData[name] = parseInt(value, 10);
+                document.getElementById('english-rating').textContent = value;
+            } else {
+                formData[name] = value;
+            }
+        });
+
+        // Next button
+        nextBtn.addEventListener('click', () => {
+            if (validateStep(step)) {
+                step++;
+                updateProgress();
+                window.scrollTo(0, 0);
+            }
+        });
+
+        // Prev button
+        prevBtn.addEventListener('click', () => {
+            step--;
+            updateProgress();
+            window.scrollTo(0, 0);
+        });
+
+        // Submit
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (validateStep(step)) {
+                console.log('Form submitted:', formData);
+                setTimeout(() => {
+                    form.parentElement.classList.add('hidden');
+                    submitted.classList.remove('hidden');
+                }, 1000);
+            }
+        });
+
+        // Initial setup
+        updateProgress();
+    </script>
+</body>
+</html>
